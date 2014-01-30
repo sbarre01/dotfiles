@@ -8,8 +8,8 @@
 # Import the shell agnostic environment config
 source ~/.profile
 
-# When running two bash windows, allow both to write to the history, not one stomping the other
-shopt -s histappend
+# Load bash options.
+source ~/dotfiles/bash_options
 
 #PROMPT_COMMAND='history -a'
 
@@ -17,11 +17,10 @@ shopt -s histappend
 # export HISTCONTROL="ignoredups"
 # export HISTIGNORE="&:ls:[bf]g:exit"
 
-# Keep multiline commands as one command in history
-shopt -s cmdhist
-
 # Load Matthew's Git bash prompt
-source ~/.dotfiles/bash_gitprompt
+#source ~/dotfiles/bash_prompt
+# Load my Git bash prompt
+source ~/dotfiles/bash_prompt_current
 
 # Load git bash completion
 # TODO
