@@ -16,3 +16,9 @@
 [submodule "vim-surround"]
     path = vim/bundle/vim-surround
     url = git://github.com/tpope/vim-surround.git
+[submodule "scripts"]
+	path = scripts
+	url = https://github.com/jimlawton/scripts
+[submodule "unison-sync"]
+	path = unison-sync
+	url = https://github.com/jimlawton/unison-sync
