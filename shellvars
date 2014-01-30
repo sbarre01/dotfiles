@@ -35,3 +35,52 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=2000
 export HISTFILESIZE=2000
 export HISTTIMEFORMAT="%F %T  "
+
+HOSTNAME=`hostname -s`
+COMP_WORDBREAKS="${COMP_WORDBREAKS}:"
+export EDITOR=vi
+export PAGER=less
+export PSSH_HOSTS=~/.hosts_file
+# List of all machines in our desktop "cluster".
+export CLUSTER="lightning gemini saturn jalapeno blackhawk hydrogen helium lithium nitrogen neon boron beryllium carbon oxygen"
+export POWER_IP="193.120.91.113"
+export POWER_PORT=2
+export POWERCYCLE="/local/$USER/work/svn/stbtools/trunk/share/python/power.py $POWER_IP $POWER_PORT cycle"
+if [ -d /local/$USER ]; then
+    export CCACHE_DIR=/local/$USER/.ccache
+fi
+export TMOUT=0
+#export GOROOT=/local/jiml/go
+#export GOOS=linux
+#export GOARCH=amd64
+#export GOBIN=/local/jiml/go/bin
+export GOPATH=/home/jiml/go
+# Manpages colour schemes.
+# Mostly magenta...
+#export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
+#export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
+#export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
+#export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
+#export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode - yellow
+#export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
+#export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode - cyan
+# Bolder...
+export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode
+export LESS_TERMCAP_md=$(printf '\e[01;38;5;75m') # enter double-bright mode
+export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
+export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
+export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode
+export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
+export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
+
+#export SERVER=`/sbin/ifconfig eth0 | grep "inet addr" | awk '{print $2}' | awk -F: '{print $2}'`
+umask 002
+export USER=jiml
+
+#export ENIGMAIL_PASS_ENV=http_proxy
+#export JAVA_HOME=/usr/java/latest
+export EDITOR=vi
+export XXDIFF_EDITOR="xterm -e 'vi %s'"
+export PYTHONSTARTUP=~/.pystartup.py
+export PRINTER=baird
+
