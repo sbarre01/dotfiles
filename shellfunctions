@@ -141,22 +141,20 @@ function git.nr() {
 
 
 function find.name() {
-  wild=\'\*$1\*\'
-  sh -c "find . -iname $wild"
+    wild=\'\*$1\*\'
+    sh -c "find . -iname $wild"
 }
 
 
 # From Eli Bendersky
 # http://eli.thegreenplace.net/2013/06/11/keeping-persistent-history-in-bash/
 function log_bash_persistent_history() {
-  [[
-    $(history 1) =~ ^\ *[0-9]+\ +([^\ ]+\ [^\ ]+)\ +(.*)$
-  ]]
-  local date_part="${BASH_REMATCH[1]}"
-  local command_part="${BASH_REMATCH[2]}"
-  if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]; then
-	echo $HOSTNAME "|" $date_part "|" "$command_part" >> ~/.persistent_history`
-    export PERSISTENT_HISTORY_LAST="$command_part"
-  fi
+    [[ $(history 1) =~ ^\ *[0-9]+\ +([^\ ]+\ [^\ ]+)\ +(.*)$ ]]
+    local date_part="${BASH_REMATCH[1]}"
+    local command_part="${BASH_REMATCH[2]}"
+    if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]; then
+        echo "$HOSTNAME | $date_part | $command_part" >> ~/.persistent_history
+        export PERSISTENT_HISTORY_LAST="$command_part"
+    fi
 }
 
