@@ -6,11 +6,7 @@ pushd ~
 .bash_history
 .bash_profile
 .bashrc
-.boom
-.cloudapp
 .conf
-.emacs_desktop
-.gemrc
 .gitconfig
 .gitignore
 .netrc
@@ -21,23 +17,12 @@ pushd ~
 .shellpaths
 .shellvars
 .vimrc
-.zdirstore
-.zlogout
-.zprofile
-.zsh
-.zsh-update
-.zshenv
-.zshrc
 
 # Link
 .bash_history
 .bash_profile
 .bashrc
-.boom
-.cloudapp
 .conf
-.emacs_desktop
-.gemrc
 .gitconfig
 .gitignore
 .netrc
@@ -48,13 +33,6 @@ pushd ~
 .shellpaths
 .shellvars
 .vimrc
-.zdirstore
-.zlogout
-.zprofile
-.zsh
-.zsh-update
-.zshenv
-.zshrc
 
 
 # Cleanup
