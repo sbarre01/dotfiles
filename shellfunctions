@@ -128,3 +128,21 @@ function checkproxy {
 	fi
 }
 
+
+# Create a new git repo with one README commit and CD into it
+function git.nr() { 
+	mkdir $1
+	cd $1
+	git init
+	touch README
+	git add README
+	git commit -m "First commit."
+}
+
+
+function find.name() {
+  wild=\'\*$1\*\'
+  sh -c "find . -iname $wild"
+}
+
+
