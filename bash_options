@@ -1,0 +1,11 @@
+# Shell options.
+
+# Include dot (.) files in the results of expansion
+#shopt -s dotglob
+# Case-insensitive matching for filename expansion
+shopt -s nocaseglob
+# Enable extended pattern matching
+shopt -s extglob
+
+#set nobeep
+
