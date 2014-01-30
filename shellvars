@@ -1,22 +1,18 @@
 #########################################################################
 # Temporary aliases useful for demos, other current projects
 #########################################################################
-export MYTEMP=~/Documents/Scratch
-export MYCODE=~/Documents/Code
-export MYARCHIVEDEV=~/Documents/Temp-ArchiveDisk
-export MYARCHIVEAPPS=~/Documents/Temp-ArchiveDisk
-export MYSCRATCH=~/Documents/Scratch
-export MYPROCESS=~/Dropbox/Temp-Process
+
+export MYCODE=~/git
 export MYDOWNLOADS=~/Downloads
 export MYDOCUMENTS=~/Documents
-export MYTEACH=~/Documents/Teach
-export MYCOURSES=~/Documents/Teach/Courses
-export MYDEVAPPS=/Applications/Dev
+export MYECLIPSE=~/workspace
+export MYLOCAL=/local/${USER}/
+
 
 #########################################################################
 # Tool paths
 #########################################################################
-export JAVA_HOME=/Library/Java/Home
+
 
 #########################################################################
 # Tool settings
@@ -29,3 +25,13 @@ export LESS="-R"
 
 #GPG_TTY=$(tty)
 #export GPG_TTY
+
+
+#########################################################################
+# Shell settings
+#########################################################################
+
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=2000
+export HISTFILESIZE=2000
+export HISTTIMEFORMAT="%F %T  "
