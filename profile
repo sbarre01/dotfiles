@@ -3,8 +3,8 @@
 #############################################################
 
 ###################
-# Set textmate as our default command line editor
-export EDITOR='mate -w'
+# Set vim as our default command line editor
+export EDITOR='vim'
 
 ###################
 # Load paths and environment variables

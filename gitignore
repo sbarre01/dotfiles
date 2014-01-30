@@ -1,6 +1,5 @@
 .DS_Store
 *~
 .#*
-.gradle_targets
-.gradle
-.gradletasknamecache
+*.pyc
+*.o
