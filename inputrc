@@ -7,4 +7,8 @@ set bell-style none
 "\e[C": forward-char
 "\eOD": backward-char
 "\e[D": backward-char
+"\e[3;5~": backward-kill-word
+"\C-?": backward-kill-word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
 
