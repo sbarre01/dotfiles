@@ -1,4 +1,5 @@
 set bell-style none
+set match-hidden-files off
 "\eOA": history-search-backward
 "\e[A": history-search-backward
 "\eOB": history-search-forward
