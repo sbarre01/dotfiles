@@ -4,9 +4,9 @@
 # Bash Interactive Shell Setup
 ########################################################################
 
-# Import the Z or Bash shell agnostic environment config
-source ~/.profile
 
+# Import the shell agnostic environment config
+source ~/.profile
 
 # When running two bash windows, allow both to write to the history, not one stomping the other
 shopt -s histappend
