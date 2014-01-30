@@ -35,8 +35,10 @@ export HISTFILESIZE=100000
 export HISTSIZE=20000
 
 # Ignore dupe commands and other ones you don't care about
-export HISTIGNORE="&:[ ]*:exit:ls:pwd"
+export HISTIGNORE="&:[ ]*:exit:ls:pwd:[bf]g"
 
 # Old way to save history across multiple sessions.
 #export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+
+
 
