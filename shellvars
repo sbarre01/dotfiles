@@ -10,11 +10,6 @@ export MYLOCAL=/local/${USER}/
 
 
 #########################################################################
-# Tool paths
-#########################################################################
-
-
-#########################################################################
 # Tool settings
 #########################################################################
 
@@ -34,13 +29,15 @@ export LESS="-R"
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=2000
 export HISTFILESIZE=2000
-export HISTTIMEFORMAT="%F %T  "
+export HISTTIMEFORMAT="%F %T "
 
-HOSTNAME=`hostname -s`
+export HOSTNAME=`hostname -s`
+
 COMP_WORDBREAKS="${COMP_WORDBREAKS}:"
 export EDITOR=vi
 export PAGER=less
 export PSSH_HOSTS=~/.hosts_file
+
 # List of all machines in our desktop "cluster".
 export CLUSTER="lightning gemini saturn jalapeno blackhawk hydrogen helium lithium nitrogen neon boron beryllium carbon oxygen"
 export POWER_IP="193.120.91.113"
