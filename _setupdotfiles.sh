@@ -1,21 +1,21 @@
 SHELLSCONFIGDIR=~/dotfiles
 DOTFILESDIR=~/dotfiles
 DOTFILES=".bash_history .bash_profile .bashrc .colordiffrc .colorgccrc .cshrc .gitconfig .gitignore .profile .vimrc .vim .xxdiffrc"
-MOVE=false
+MOVE=true
 SAVEDIR=~/.old
 
 function symlinkifne {
-    target="~/$1"
+    target=~/$1
     echo "Working on: $target"
 	export dotless=`echo $1 | sed s/^\.//`
-	if [[ -a $target ]]; then
+	if [ -e $target ]; then
 		echo "  WARNING: $target already exists!"
 		if [ "$MOVE" = "true" ]; then
 			echo "  Moving $target to ~/.old/"
-			echo "mv $target ~/.old/"
+			mv $target ~/.old/
 			dotless=$(echo $1 | sed s/.//)
 			echo "  Symlinking $DOTFILESDIR/$dotless to $1"
-			echo "ln -s $DOTFILESDIR/$dotless $target"
+			ln -s $DOTFILESDIR/$dotless $target
 		else
 			echo "  Skipping $1."  
 		fi
