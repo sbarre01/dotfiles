@@ -3,6 +3,8 @@
 " ########################################################################
 execute pathogen#infect()
 
+set shell=/bin/bash 
+
 " turn syntax highlighting on by default
 syntax on
 filetype plugin indent on
@@ -20,7 +22,8 @@ set vb
 set showmatch
 
 " make that backspace key work the way it should
-set backspace=indent,eol,startset nocompatible               " be iMproved
+"set backspace=indent,eol,startset 
+set backspace=indent,eol
 
 filetype off                   " required!
 
