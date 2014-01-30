@@ -138,4 +138,7 @@ if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 20
 	alias visio="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Visio\ 2010 --cx-app visio.exe"
 fi
 
+# History search.
+alias hgrep='history|grep --color'
+alias phgrep='cat ~/.persistent_history|grep --color'
 
