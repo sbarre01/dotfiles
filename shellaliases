@@ -56,19 +56,86 @@ alias ls='ls -G -h -p '
 alias ll='ls -l -G -h -p '
 
 
-#########################################
-# Utility Functions
-
-# Create a new git repo with one README commit and CD into it
-function git.nr() { mkdir $1; cd $1; git init; touch README; git add README; git commit -m "First commit.";}
-
-function find.name() {
-  wild=\'\*$1\*\'
-  sh -c "find . -iname $wild"
-}
-
 alias lessc='less -R' # Lets color escape sequences carry through to less
 alias morec='more -R'
 alias lesscolor='less -R'
 alias morecolor='more -R'
+
+alias nasquota='ssh svn /home/nasadmin/nasquota/cur/bin/nasquota'
+alias prettyprint='enscript --pretty-print --color -2 -r'
+if [ -f /usr/bin/colordiff ]; then
+    alias diff='colordiff'
+fi
+alias grep='grep --color=auto --exclude=.svn'
+alias egrep='egrep --color=auto --exclude=.svn'
+alias fgrep='fgrep --color=auto --exclude=.svn'
+#alias sortlog='cat logs/`ls -t logs/ | head -1` | grep '^NDS' | sort -n'
+alias sortlog='cat logs/`ls -t logs/ | head -1` | grep '^NDS' | sort -n >sortedlog.log; dos2unix -q sortedlog.log'
+alias prunelog='cat sortedlog.log | grep WLM | grep -v SERVER_HTTP_IsValidKeyword | grep -v SERVER_HTTP_SetValue | grep -v SERVER_HTTP_ExtractValue | grep -v ClearReceiveMessageBuffer | grep -v ClearTransmitMessageBuffer | grep -v CopyToTransmitBuffer | grep -v CopyFromReceiveBuffer | grep -v SERVER_ReadConfigFile | grep -v SERVER_HTTP_SetKeywordTable | grep -v SERVER_HTTP_ClearBuffer > prunedlog.log'
+#alias vilastlog='vi logs/`ls -t logs/ | head -1`'
+alias vilastlog='vi `ls -t *.log | head -1`'
+alias catlastlog='cat logs/`ls -t logs/ | head -1`'
+alias brokenlinks='find . -type l | (while read FN ; do test -e "$FN" || ls -ld "$FN"; done)'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+#alias cd='cd \!*; pwd'
+#alias cd='pushd !*'
+#alias more=less
+
+alias ls='ls --color=auto'
+alias ls-l='ls -l'
+alias ls-lt='ls -lt'
+alias latest='ls -alt | head -20'
+
+#alias du='du --exclude=.svn'
+
+alias now='date +"%Y%m%d-%H%M%S"'
+alias minicom='minicom -C minicom-`now`.log'
+
+#alias svnst='svn st --ignore-externals'
+#alias svnup='svn up --ignore-externals'
+
+alias svnrepos='export REPOS=$(~/utils/svnrepos -r) ; echo $REPOS'
+alias svnurl='svn info | awk "/^URL:/ {print}" | sed "s/^URL: //"'
+alias svndot='svn info | awk "/^URL:/ {print}" | sed "s/^URL: //"'
+alias svndotdot='svn info .. | awk '\''/^URL:/ {print}'\'' | sed '\''s/^URL: //'\'''
+
+alias svndiff='svn diff --diff-cmd=xx-diff-proxy'
+
+# shortcuts for doing process stuff
+alias pgrep='ps auxww | grep \!* | grep -v grep'
+#alias pfind='pgrep \!* | awk "{print \${2}}"'
+
+#alias a2ps='a2ps -r -1 -C -E -g -l120 -s2 --toc'
+#alias a2ps='a2ps -r -1 -C -E -g -l120 -s2'
+alias a2ps='a2ps --landscape -1 --line-numbers=5 --pretty-print --highlight-level=heavy --chars-per-line=120 --sides=duplex --prologue=color'
+
+alias mfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \) -print \) | xargs -r egrep --color=auto -n'
+alias mnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \) -print \) | xargs -r egrep --color=auto -n -v'
+alias sfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \) -print \) | xargs -r egrep --color=auto -n'
+alias snotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \) -print \) | xargs -r egrep --color=auto -n -v'
+alias shfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \) -print \) | xargs -r egrep --color=auto -n'
+alias shnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \) -print \) | xargs -r egrep --color=auto -n -v'
+alias cfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[cCsS]" -o -name "*\.cc" -o -name "*\.cpp" \) -print \) | xargs -r egrep --color=auto -n'
+alias cnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[cCsS]" -o -name "*\.cc" -o -name "*\.cpp" \) -print \) | xargs -r egrep --color=auto -n -v'
+alias hfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[hH]" -print \) | xargs -r egrep --color=auto -n'
+alias hnotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[hH]" -print \) | xargs -r egrep --color=auto -n -v'
+alias jfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.java" -print \) | xargs -r egrep --color=auto -n'
+alias jnotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.java" -print \) | xargs -r egrep --color=auto -n -v'
+alias pyfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.py" -print \) | xargs -r egrep --color=auto -n'
+alias pynotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.py" -print \) | xargs -r egrep --color=auto -n -v'
+alias dfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[dD]" -print \) | xargs -r egrep --color=auto -n'
+alias dnotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[dD]" -print \) | xargs -r egrep --color=auto -n -v'
+alias ofind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.o"  -print \) | xargs -r nm | egrep --color=auto -n'
+alias rstfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.rst" \) -print \) | xargs -r egrep --color=auto -n'
+alias rstnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.rst" \) -print \) | xargs -r egrep --color=auto -n -v'
+if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 2010 ]; then
+	alias word="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Office\ 2010 --cx-app winword.exe"
+	alias excel="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Office\ 2010 --cx-app excel.exe"
+	alias powerpnt="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Office\ 2010 --cx-app powerpnt.exe"
+	alias visio="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Visio\ 2010 --cx-app visio.exe"
+fi
+
 
