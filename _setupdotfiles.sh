@@ -1,6 +1,6 @@
 SHELLSCONFIGDIR=~/dotfiles
 DOTFILESDIR=~/dotfiles
-DOTFILES=".bash_history .bash_profile .bashrc .colordiffrc .colorgccrc .gitconfig .gitignore .profile .vimrc .vim .xxdiffrc"
+DOTFILES=".bash_history .bash_profile .bashrc .colordiffrc .colorgccrc .cshrc .gitconfig .gitignore .profile .vimrc .vim .xxdiffrc"
 MOVE=false
 SAVEDIR=~/.old
 
