@@ -1,11 +1,20 @@
 # Shell options.
 
-# Include dot (.) files in the results of expansion
+# Include dot (.) files in the results of expansion.
 #shopt -s dotglob
-# Case-insensitive matching for filename expansion
+
+# Case-insensitive matching for filename expansion.
 shopt -s nocaseglob
-# Enable extended pattern matching
+
+# Enable extended pattern matching.
 shopt -s extglob
+
+# When running two bash windows, allow both to write to the history, not one
+# stomping the other.
+shopt -s histappend
+
+# Keep multiline commands as one command in history.
+shopt -s cmdhist
 
 #set nobeep
 
