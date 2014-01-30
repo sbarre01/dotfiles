@@ -8,9 +8,9 @@ export EDITOR='vim'
 
 ###################
 # Load paths and environment variables
-source ~/.shellvars
-source ~/.shellfunctions
-source ~/.shellpaths
-source ~/.shellaliases
-source ~/.shellactivities
+source ~/dotfiles/shellvars
+source ~/dotfiles/shellfunctions
+source ~/dotfiles/shellpaths
+source ~/dotfiles/shellaliases
+source ~/dotfiles/shellactivities
 
