@@ -1,41 +1,18 @@
 # Bash shell prompting.
 
 source ~/utils/colors.bash
-# Various variables for your PS1 prompt.
-BELL="\a"
-DATE="\d"
-ESCAPE="\e"
-SHORT_HOST="\h"
-HOST="\H"
-JOBS="\j"
-TERMINAL="\l"
-SHELL="\s"
-TIME_24HR="\t"
-TIME_12HR="\T"
-TIME_12HR_AMPM="\@"
-TIME_24HR_AMPM="\A"
-USERNAME="\u"
-BASHVER="\v"
-BASHREL="\V"
-CWD="\w"         # The current working directory, with $HOME abbreviated with a tilde (uses the value of the PROMPT_DIRTRIM variable).
-CWD_SHORT="\W"   # The basename of the current working directory, with $HOME abbreviated with a tilde.
-HISTNUM="\!"
-CMDNUM="\#"
 
-# Old trusty prompt, just the facts ma'am.
+# Old trusty prompt.
 #export PS1='\[\033[1;34m\]\h:\W>\[\033[0m\] '
 
 # New shiny Git prompt.
 source ~/utils/git-prompt.sh
-#export PS1='\[\033[1;34m\]\h:\W>\[\033[0m\] '
-#export PS1="\[$Blue\]$USERNAME@$SHORT_HOST\[$Yellow\]$CWD\[\e[m\]\[$Magenta\]\$(__git_ps1)\[$Blue\]> \[$White\]"
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWSTASHSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS="true"
-#export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\> "'
-export PROMPT_COMMAND='__git_ps1 "\[$IBlue\]\u@\h\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
+export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]\u@\h\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
 
 export PS4='(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]}\n'
 
