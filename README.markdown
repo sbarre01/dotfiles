@@ -15,7 +15,7 @@ This project contains submodules. It is suggested that you clone this into your 
 
 # Setup
 There is a set up script that establishes the symlinks in your home directory. Run this once.
-* `_setupdotfiles.bsh`
+* `_setupdotfiles.sh`
 
 > NOTE: Some personal configuration of Jim's will remain after setup. These dotfiles are intended for your inspiration, forking, and for you to tweak to your specific needs.
 
