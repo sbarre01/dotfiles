@@ -5,11 +5,13 @@
 ########################################################################
 
 
-# Import the shell agnostic environment config
-source ~/.profile
-
-# Load bash colors.
-source ~/dotfiles/bash_colors
+# Load paths and environment variables
+source ~/dotfiles/vars
+source ~/dotfiles/functions
+source ~/dotfiles/paths
+source ~/dotfiles/aliases
+source ~/dotfiles/activities
+source ~/dotfiles/colors
 
 # Load bash options.
 source ~/dotfiles/bash_options

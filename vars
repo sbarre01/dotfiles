@@ -47,11 +47,10 @@ if [ -d /local/$USER ]; then
     export CCACHE_DIR=/local/$USER/.ccache
 fi
 export TMOUT=0
-#export GOROOT=/local/jiml/go
-#export GOOS=linux
-#export GOARCH=amd64
-#export GOBIN=/local/jiml/go/bin
-export GOPATH=/home/jiml/go
+
+# Go.
+export GOPATH=~/go
+
 # Manpages colour schemes.
 # Mostly magenta...
 #export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
@@ -72,11 +71,10 @@ export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
 
 #export SERVER=`/sbin/ifconfig eth0 | grep "inet addr" | awk '{print $2}' | awk -F: '{print $2}'`
 umask 002
-export USER=jiml
 
-#export ENIGMAIL_PASS_ENV=http_proxy
-#export JAVA_HOME=/usr/java/latest
-export EDITOR=vi
+# Set vim as our default command line editor
+export EDITOR='vim'
+
 export XXDIFF_EDITOR="xterm -e 'vi %s'"
 export PYTHONSTARTUP=~/.pystartup.py
 export PRINTER=baird
