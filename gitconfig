@@ -122,7 +122,6 @@
 	ignored = ls-files --others --i --exclude-standard
 	k = !exec gitk --all&
 	last = log -1 HEAD
-	# Legit
 	lf = log --pretty=fuller
 	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 	lgorigin = log --oneline --graph --decorate origin/master...master --left-right
@@ -174,7 +173,6 @@
 	rtheirs = !git checkout --theirs ./ && git add . && git rebase --continue
 	rv = remote -v
 	scrub = !git reset --hard && git clean -fd
-	#Searches
 	servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
 	shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
 	showignored2 = ls-files --others --ignored --exclude-standard
