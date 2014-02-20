@@ -142,3 +142,5 @@ fi
 alias hgrep='history|grep --color'
 alias phgrep='cat ~/.persistent_history|grep --color'
 
+# Kill ssh or sshpass sessions (e.g. if VPN hangs).
+alias sshkill="ps auxww | egrep 'sshpass|ssh ' | egrep -v egrep | awk '{print \$2}' | xargs kill -9"
