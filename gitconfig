@@ -193,3 +193,5 @@
 	whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
 	who = shortlog -s --
 	wipe = reset --hard HEAD
+[http]
+	sslVerify = false
