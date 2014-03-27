@@ -46,6 +46,8 @@ if [ ! -z "$DISPLAY" ]; then
 	xmodmap -e "keycode 24 = q Q at at at at"
 fi
 
+checkproxy
+
 # Unison sync script...
 # Only run on the client host, and only if interactive.
 if [ "$HOSTNAME" == "apollo" ]; then
