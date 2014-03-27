@@ -195,3 +195,4 @@
 	wipe = reset --hard HEAD
 [http]
 	sslVerify = false
+	postBuffer = 524288000
