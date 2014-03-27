@@ -130,6 +130,7 @@ function checkproxy {
     fi
 }
 
+
 # Turn on proxy.
 function proxyon {
     export https_proxy="http://193.120.90.34:3128"
@@ -138,6 +139,7 @@ function proxyon {
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
+    echo "Proxy enabled."
 }
 
 
@@ -149,10 +151,21 @@ function proxyoff {
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.noproxy ~/.subversion/servers
     ln -sf ~/.subversion/config.home ~/.subversion/config
+    echo "Proxy disabled."
 }
 
 
-# Create a new git repo with one README commit and CD into it
+# Toggle proxy.
+function checkproxy {
+    if [ -z "$http_proxy" ]; then
+        proxyon
+    else
+        proxyoff
+    fi
+}
+
+
+# Create a new git repo with one README commit and cd into it
 function git.nr() { 
 	mkdir $1
 	cd $1
