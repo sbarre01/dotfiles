@@ -156,7 +156,7 @@ function proxyoff {
 
 
 # Toggle proxy.
-function checkproxy {
+function proxy {
     if [ -z "$http_proxy" ]; then
         proxyon
     else
