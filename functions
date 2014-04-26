@@ -148,6 +148,13 @@ function proxyoff {
     unset https_proxy
     unset http_proxy
     unset no_proxy
+    unset ftp_proxy
+    unset all_proxy
+    unset HTTPS_PROXY
+    unset HTTP_PROXY
+    unset NO_PROXY
+    unset FTP_PROXY
+    unset ALL_PROXY
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.noproxy ~/.subversion/servers
     ln -sf ~/.subversion/config.home ~/.subversion/config
