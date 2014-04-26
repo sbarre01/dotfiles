@@ -6,7 +6,7 @@ source ~/dotfiles/colors.bash
 #export PS1='\[\033[1;34m\]\h:\W>\[\033[0m\] '
 
 # New shiny Git prompt.
-source ~/utils/git-prompt.sh
+source ~/dotfiles/git/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWSTASHSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
