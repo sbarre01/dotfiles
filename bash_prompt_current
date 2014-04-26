@@ -1,6 +1,6 @@
 # Bash shell prompting.
 
-source ~/utils/colors.bash
+source ~/dotfiles/colors.bash
 
 # Old trusty prompt.
 #export PS1='\[\033[1;34m\]\h:\W>\[\033[0m\] '
