@@ -39,4 +39,4 @@
 	url = https://github.com/vim-scripts/FuzzyFinder
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = git://github.com/wincent/Command-T.git
