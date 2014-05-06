@@ -37,18 +37,19 @@ def main():
 
     if "http_proxy" in config.keys():
         if opts.proxy:
-            print("Setting SublimeText proxy to %s" % opts.proxy)
+            #print("Setting SublimeText proxy to %s" % opts.proxy)
             config["http_proxy"] = opts.proxy
         else:
             print("Clearing SublimeText proxy setting")
             del config["http_proxy"]
     else:
         if opts.proxy:
-            print("Setting SublimeText proxy to %s" % opts.proxy)
+            #print("Setting SublimeText proxy to %s" % opts.proxy)
             config["http_proxy"] = opts.proxy
 
     with open(cfgfile, 'w') as f:
         json.dump(config, f, indent=8, sort_keys=True)
+
 
 if __name__ == '__main__':
     main()
