@@ -130,7 +130,7 @@ function proxyon {
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy/
-    echo "Proxy enabled."
+    #echo "Proxy enabled."
 }
 
 
@@ -150,7 +150,7 @@ function proxyoff {
     ln -sf ~/.subversion/servers.noproxy ~/.subversion/servers
     ln -sf ~/.subversion/config.home ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py
-    echo "Proxy disabled."
+    #echo "Proxy disabled."
 }
 
 
