@@ -40,7 +40,7 @@ def main():
             #print("Setting SublimeText proxy to %s" % opts.proxy)
             config["http_proxy"] = opts.proxy
         else:
-            print("Clearing SublimeText proxy setting")
+            #print("Clearing SublimeText proxy setting")
             del config["http_proxy"]
     else:
         if opts.proxy:
