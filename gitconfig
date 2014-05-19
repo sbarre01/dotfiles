@@ -189,6 +189,7 @@
 	tagcontains = git tag -l --contains HEAD
 	tips = "!_() { t=$(git rev-list --no-merges --max-count=1 \"$@\"); if test -n \"$t\"; then echo $t; _ \"$@\" ^$t; fi; }; _"
 	type = cat-file -t
+	weekly = !git --no-pager log --author=Jim --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset'
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 	whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
 	who = shortlog -s --
