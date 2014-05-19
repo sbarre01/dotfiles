@@ -182,14 +182,14 @@
 	sno = show --name-only
 	squash = "!sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
 	s = status -u -s
-	standup = log --all --since yesterday --author jim.lawton@gmail.com
+	standup = log --all --since yesterday --author jim.lawton@s3group.com
 	stat = status
 	st = status
 	sync = !git pull && git push
 	tagcontains = git tag -l --contains HEAD
 	tips = "!_() { t=$(git rev-list --no-merges --max-count=1 \"$@\"); if test -n \"$t\"; then echo $t; _ \"$@\" ^$t; fi; }; _"
 	type = cat-file -t
-	weekly = !git --no-pager log --author=Jim --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset'
+	weekly = !git --no-pager log --author=\"`git config --global user.name`\" --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset'
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 	whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
 	who = shortlog -s --
