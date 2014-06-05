@@ -9,7 +9,7 @@
 	quotepath = false
 	editor = vim
 [credential]
-	helper = cache --timeout 3600
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [push]
 	default = simple
 [branch "master"]
