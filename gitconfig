@@ -197,3 +197,5 @@
 [http]
 	sslVerify = false
 	postBuffer = 524288000
+[diff "nodiff"]
+	command = /bin/true
