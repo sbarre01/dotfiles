@@ -25,6 +25,8 @@ set showmatch
 "set backspace=indent,eol,startset 
 set backspace=indent,eol
 
+set expandtab shiftwidth=4 tabstop=4
+
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
