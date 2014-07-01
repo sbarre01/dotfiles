@@ -2,19 +2,19 @@
 
 # Shell Functions.
 
-function col() { 
+function col { 
     awk '{print $'$(echo $* | sed -e 's/ /,$/g')'}'; 
 }
 
 
 # Awk calculator.
-function calc () {
+function calc {
     awk "BEGIN { print $* }" ;
 }
 
 
 # Add a path to the global PATH.
-function pathmunge () {
+function pathmunge {
     if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
        if [ "$2" = "after" ] ; then
           PATH=$PATH:$1
@@ -30,7 +30,7 @@ function pathmunge () {
 # Usage .. [n]
 # Go up n-levels.
 # i.e.: .. 3 will go up 3 levels 
-function .. (){
+function .. {
 	local arg=${1:-1};
 	local dir=""
 	while [ $arg -gt 0 ]; do
@@ -44,7 +44,7 @@ function .. (){
 # Go up until you encounter Thing/Some, then go there
 # i.e.: I'm in /usr/share/X11
 # ... src will go up to /usr, then change to /usr/src 
-function ... (){
+function ... {
 	if [ -z "$1" ]; then
 		return
 	fi
@@ -61,7 +61,7 @@ function ... (){
 
 
 # Change extensions of specified files.
-function chext(){
+function chext {
     local fname
     local new_ext="$1"
     shift
@@ -74,7 +74,7 @@ function chext(){
 
 
 # Execute a command via SSH on a set of machines.
-function cluster () {
+function cluster {
     for mach in $CLUSTER; do 
         (echo -n "$mach: "; ssh -q $mach $*) 
     done
@@ -82,7 +82,7 @@ function cluster () {
 
 
 # Yum update a set of hosts.
-function clupdate () {
+function clupdate {
     for mach in $CLUSTER; do 
         echo -n "$mach: "
         ssh -q -t $mach sudo yum update -q -y 
@@ -93,8 +93,7 @@ function clupdate () {
 }
 
 
-tools()
-{
+function tools {
     pushd . >/dev/null
     brtop
     if [ -d $(pwd)/tools ]; then
@@ -106,6 +105,7 @@ tools()
     fi
     popd >/dev/null
 }
+
 
 # Determine if proxy is needed.
 function checkproxy {
