@@ -121,6 +121,65 @@ function checkproxy {
 }
 
 
+# Gnome: set proxy.
+# Args: 
+# 1: mode - 'none', 'manual', 'auto'.
+# 2: mode=none: ignored
+#    mode=manual: host
+#    mode=auto: url
+# 3: mode=manual: port
+function gnomeproxy {
+	if [ "$1" == 'auto' ]; then
+		enabled='true'
+		gnome_mode='auto'
+	    url="$2"
+	elif [ "$1" == 'manual' ]; then
+		enabled='true'
+		gnome_mode='manual'
+	    proxy="$2"
+	    port="$3"
+	else
+		enabled='false'
+		gnome_mode='none'
+	fi
+
+	same='true'
+
+	
+	machineid=$(dbus-uuidgen --get)
+    export $(DISPLAY=':0.0' dbus-launch --autolaunch="$machineid")
+
+    # active or not
+    gsettings set org.gnome.system.proxy.http enabled "$enabled"
+    gsettings set org.gnome.system.proxy mode "$gnome_mode"
+
+    # proxy settings
+    gsettings set org.gnome.system.proxy.http host '"$proxy"'
+    gsettings set org.gnome.system.proxy.http port "$port"
+
+    gsettings set org.gnome.system.proxy use-same-proxy "true"
+
+    gsettings set org.gnome.system.proxy.https host '"$proxy"'
+    gsettings set org.gnome.system.proxy.https port "$port"
+
+    gsettings set org.gnome.system.proxy.ftp host '"$proxy"'
+    gsettings set org.gnome.system.proxy.ftp port "$port"
+
+    gsettings set org.gnome.system.proxy.socks host '"$proxy"'
+    gsettings set org.gnome.system.proxy.socks port "$port"
+
+    # ignore-list
+	ignorelist=`echo $no_proxy | sed 's/^\[\(.*\)\]$/\1/'`
+	quoted_ignorelist=`echo $ignorelist | sed "s/[^,]\+/'\0'/g"`
+	gnome3_ignorelist="[${quoted_ignorelist}]"
+    gsettings set org.gnome.system.proxy ignore-hosts "${gnome3_ignorelist}"
+    
+	if [ "$1" == 'auto' ]; then
+        gsettings set org.gnome.system.proxy autoconfig-url '"$url"'
+    fi
+}
+
+
 # Turn on proxy.
 function proxyon {
     export https_proxy="http://193.120.90.34:3128"
@@ -130,6 +189,9 @@ function proxyon {
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy/
+    if [ ! -z "$DISPLAY" ]; then 
+        gnomeproxy("auto", "http://proxy.s3group.com/proxy.pac")
+    fi
     #echo "Proxy enabled."
 }
 
@@ -150,6 +212,9 @@ function proxyoff {
     ln -sf ~/.subversion/servers.noproxy ~/.subversion/servers
     ln -sf ~/.subversion/config.home ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py
+    if [ ! -z "$DISPLAY" ]; then 
+        gnomeproxy("none")
+    fi
     #echo "Proxy disabled."
 }
 
