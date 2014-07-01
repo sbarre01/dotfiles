@@ -129,54 +129,34 @@ function checkproxy {
 #    mode=auto: url
 # 3: mode=manual: port
 function gnomeproxy {
-	if [ "$1" == 'auto' ]; then
-		enabled='true'
-		gnome_mode='auto'
-	    url="$2"
-	elif [ "$1" == 'manual' ]; then
-		enabled='true'
-		gnome_mode='manual'
-	    proxy="$2"
-	    port="$3"
-	else
-		enabled='false'
-		gnome_mode='none'
-	fi
-
-	same='true'
-
-	
 	machineid=$(dbus-uuidgen --get)
     export $(DISPLAY=':0.0' dbus-launch --autolaunch="$machineid")
-
-    # active or not
-    gsettings set org.gnome.system.proxy.http enabled "$enabled"
-    gsettings set org.gnome.system.proxy mode "$gnome_mode"
-
-    # proxy settings
-    gsettings set org.gnome.system.proxy.http host '"$proxy"'
-    gsettings set org.gnome.system.proxy.http port "$port"
-
-    gsettings set org.gnome.system.proxy use-same-proxy "true"
-
-    gsettings set org.gnome.system.proxy.https host '"$proxy"'
-    gsettings set org.gnome.system.proxy.https port "$port"
-
-    gsettings set org.gnome.system.proxy.ftp host '"$proxy"'
-    gsettings set org.gnome.system.proxy.ftp port "$port"
-
-    gsettings set org.gnome.system.proxy.socks host '"$proxy"'
-    gsettings set org.gnome.system.proxy.socks port "$port"
-
-    # ignore-list
 	ignorelist=`echo $no_proxy | sed 's/^\[\(.*\)\]$/\1/'`
 	quoted_ignorelist=`echo $ignorelist | sed "s/[^,]\+/'\0'/g"`
 	gnome3_ignorelist="[${quoted_ignorelist}]"
     gsettings set org.gnome.system.proxy ignore-hosts "${gnome3_ignorelist}"
-    
 	if [ "$1" == 'auto' ]; then
-        gsettings set org.gnome.system.proxy autoconfig-url '"$url"'
-    fi
+        #echo "Setting auto proxy url: $2"
+        gsettings set org.gnome.system.proxy autoconfig-url "$2"
+        gsettings set org.gnome.system.proxy.http enabled 'true'
+        gsettings set org.gnome.system.proxy mode 'auto'
+	elif [ "$1" == 'manual' ]; then
+        #echo "Setting manual proxy: $2 $3"
+        gsettings set org.gnome.system.proxy.http host "$2"
+        gsettings set org.gnome.system.proxy.http port "$3"
+        gsettings set org.gnome.system.proxy use-same-proxy "true"
+        gsettings set org.gnome.system.proxy.https host "$2"
+        gsettings set org.gnome.system.proxy.https port "$3"
+        gsettings set org.gnome.system.proxy.ftp host "$2"
+        gsettings set org.gnome.system.proxy.ftp port "$3"
+        gsettings set org.gnome.system.proxy.socks host "$2"
+        gsettings set org.gnome.system.proxy.socks port "$3"
+        gsettings set org.gnome.system.proxy.http enabled 'true'
+        gsettings set org.gnome.system.proxy mode 'manual'
+	else
+        gsettings set org.gnome.system.proxy.http enabled 'false'
+        gsettings set org.gnome.system.proxy mode 'none'
+	fi
 }
 
 
@@ -190,7 +170,7 @@ function proxyon {
     ln -sf ~/.subversion/config.work ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy/
     if [ ! -z "$DISPLAY" ]; then 
-        gnomeproxy("auto", "http://proxy.s3group.com/proxy.pac")
+        gnomeproxy "auto" "http://proxy.s3group.com/proxy.pac"
     fi
     #echo "Proxy enabled."
 }
@@ -213,7 +193,7 @@ function proxyoff {
     ln -sf ~/.subversion/config.home ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py
     if [ ! -z "$DISPLAY" ]; then 
-        gnomeproxy("none")
+        gnomeproxy "none"
     fi
     #echo "Proxy disabled."
 }
