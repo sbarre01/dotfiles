@@ -240,7 +240,7 @@ function log_bash_persistent_history() {
 
 # gitignore.io
 # http://www.gitignore.io/cli
-function gi() { 
-    curl http://www.gitignore.io/api/\$@ ;
+function gi() {
+    curl http://www.gitignore.io/api/$@ ; 
 }
 
