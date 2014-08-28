@@ -3,3 +3,7 @@
 .#*
 *.pyc
 *.o
+
+
+# srclib build cache
+.srclib-cache/
