@@ -76,6 +76,6 @@ umask 002
 export EDITOR='vim'
 
 export XXDIFF_EDITOR="xterm -e 'vi %s'"
-export PYTHONSTARTUP=~/.pystartup.py
+export PYTHONSTARTUP=~/.pythonrc
 export PRINTER=baird
 
