@@ -129,6 +129,9 @@ function checkproxy {
 #    mode=auto: url
 # 3: mode=manual: port
 function gnomeproxy {
+    if [ -z "$DISPLAY" ]; then
+        return
+    fi
 	machineid=$(dbus-uuidgen --get)
     export $(DISPLAY=':0.0' dbus-launch --autolaunch="$machineid")
 	ignorelist=`echo $no_proxy | sed 's/^\[\(.*\)\]$/\1/'`
