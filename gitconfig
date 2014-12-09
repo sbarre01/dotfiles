@@ -194,6 +194,7 @@
 	whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
 	who = shortlog -s --
 	wipe = reset --hard HEAD
+	url = !git info | grep ^remote | grep \\.url | awk -F= \"{print $2}\"
 [http]
 	sslVerify = false
 	postBuffer = 524288000
