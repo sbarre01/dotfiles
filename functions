@@ -169,7 +169,7 @@ function proxyon {
     export http_proxy="http://avproxyvlan.dublin.s3group.com:8080/"
     #export https_proxy="http://193.120.90.34:3128/"
     export https_proxy="http://avproxyvlan.dublin.s3group.com:8080/"
-    export no_proxy="localhost,127.0.0.0/8,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12,193.120.60.0/24,193.120.61.0/24,193.120.63.0/24,193.120.66.0/24,193.120.88.0/24,193.120.89.0/24,193.120.90.0/24,193.120.91.0/24,172.18.3.0/24,130.139.161.134,intranet.s3group.com,helpdesk.s3group.com,*.cork.s3group.com,*.dublin.s3group.com,*.wroclaw.s3group.com"
+    export no_proxy="localhost,192.168.249.25,intranet.s3group.com,helpdesk.s3group.com,.cork.s3group.com,.dublin.s3group.com,.wroclaw.s3group.com"
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
