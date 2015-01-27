@@ -2,6 +2,14 @@
 
 # Shell Functions.
 
+function killxscreensaver()
+{
+    pkill xscreensaver
+    echo ""
+    return
+}
+
+
 function col { 
     awk '{print $'$(echo $* | sed -e 's/ /,$/g')'}'; 
 }
