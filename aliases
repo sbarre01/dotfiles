@@ -132,10 +132,10 @@ alias ofind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.o"  -print 
 alias rstfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.rst" \) -print \) | xargs -r egrep --color=auto -n'
 alias rstnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.rst" \) -print \) | xargs -r egrep --color=auto -n -v'
 if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 2010 ]; then
-	alias word="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Office\ 2010 --cx-app winword.exe"
-	alias excel="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Office\ 2010 --cx-app excel.exe"
-	alias powerpnt="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Office\ 2010 --cx-app powerpnt.exe"
-	alias visio="/opt/cxoffice/bin/wine --bottle /home/jiml/.cxoffice/Microsoft\ Visio\ 2010 --cx-app visio.exe"
+	alias word="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Office\ 2010 --cx-app winword.exe"
+	alias excel="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Office\ 2010 --cx-app excel.exe"
+	alias powerpnt="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Office\ 2010 --cx-app powerpnt.exe"
+	alias visio="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Visio\ 2010 --cx-app visio.exe"
 fi
 
 # History search.
