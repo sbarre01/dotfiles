@@ -8,7 +8,7 @@ import os.path
 import sys
 from optparse import OptionParser
 
-_CFGFILE = "~/.atom/.apmrc"
+_CFGFILE = ".atom/.apmrc"
 
 
 def _getOpts():
