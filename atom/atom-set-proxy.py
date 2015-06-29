@@ -34,7 +34,7 @@ def main():
 
     lines = newlines = []
     with open(cfgfile, 'r') as f:
-        lines = cfgfile.readlines()
+        lines = f.readlines()
     found = False
     for line in lines:
         newline = None
