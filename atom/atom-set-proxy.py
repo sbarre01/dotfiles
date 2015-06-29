@@ -8,7 +8,8 @@ import os.path
 import sys
 from optparse import OptionParser
 
-_CFGFILE = ".atom/.apmrc"
+_APM_CFGFILE = ".atom/.apmrc"
+_NPM_CFGFILE = ".npmrc"
 
 
 def _getOpts():
@@ -28,30 +29,31 @@ def main():
     "Main function."
     opts, args = _getOpts()
 
-    cfgfile = os.path.join(os.getenv("HOME"), _CFGFILE)
-    if not os.path.exists(cfgfile):
-        sys.exit("Config file %s does not exist!" % cfgfile)
+    for cfgfile in [_APM_CFGFILE, _NPM_CFGFILE]:
+        cfgfile = os.path.join(os.getenv("HOME"), cfgfile)
+        if not os.path.exists(cfgfile):
+            sys.exit("Config file %s does not exist!" % cfgfile)
 
-    lines = newlines = []
-    with open(cfgfile, 'r') as f:
-        lines = f.readlines()
-    found = False
-    for line in lines:
-        newline = None
-        if "https_proxy" in line:
-            found = True
+        lines = newlines = []
+        with open(cfgfile, 'r') as f:
+            lines = f.readlines()
+        found = False
+        for line in lines:
+            newline = None
+            if "https_proxy" in line:
+                found = True
+                if opts.proxy:
+                    newline = "https_proxy = %s" % opts.proxy
+            else:
+                newline = line
+            if newline:
+                newlines.append(newline)
+        if not found:        
             if opts.proxy:
                 newline = "https_proxy = %s" % opts.proxy
-        else:
-            newline = line
-        if newline:
-            newlines.append(newline)
-    if not found:        
-        if opts.proxy:
-            newline = "https_proxy = %s" % opts.proxy
-            newlines.append(newline)
-    with open(cfgfile, 'w') as f:
-        f.writelines(lines)
+                newlines.append(newline)
+        with open(cfgfile, 'w') as f:
+            f.writelines(lines)
 
 
 if __name__ == '__main__':
