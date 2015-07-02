@@ -37,21 +37,18 @@ def main():
         lines = newlines = []
         with open(cfgfile, 'r') as f:
             lines = f.readlines()
-        found = False
         for line in lines:
             newline = None
-            if "https_proxy" in line:
-                found = True
-                if opts.proxy:
-                    newline = "https_proxy = %s" % opts.proxy
+            if "proxy" in line:
+                if not opts.proxy:
+                    continue
             else:
                 newline = line
             if newline:
                 newlines.append(newline)
-        if not found:        
-            if opts.proxy:
-                newline = "https_proxy = %s" % opts.proxy
-                newlines.append(newline)
+        if opts.proxy:
+            newlines.append("proxy = %s" % opts.proxy)
+            newlines.append("https-proxy = %s" % opts.proxy)
         with open(cfgfile, 'w') as f:
             f.writelines(lines)
 
