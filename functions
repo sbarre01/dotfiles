@@ -179,7 +179,7 @@ function proxyon {
     #export https_proxy="http://193.120.90.34:3128/"
     #export https_proxy="http://avproxyvlan.dublin.s3group.com:8080/"
     export https_proxy="http://avproxylan.dublin.s3group.com:8080/"
-    export no_proxy="localhost,192.168.249.25,193.120.88.18,.s3group.com"
+    export no_proxy="localhost,192.168.249.25,193.120.88.18,192.168.249.59,.s3group.com"
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
