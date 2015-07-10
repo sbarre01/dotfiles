@@ -83,6 +83,7 @@ export PRINTER=baird
 #export S3_PROXY="http://193.120.90.34:3128/"
 #export S3_PROXY="http://avproxyvlan.dublin.s3group.com:8080/"
 export S3_PROXY="http://avproxylan.dublin.s3group.com:8080/"
+export S3_AUTO_PROXY="http://proxy.s3group.com/proxy.pac"
 
 # Split into host and port.
 export S3_PROXY_HOST=$(echo ${S3_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
