@@ -88,4 +88,4 @@ export S3_AUTO_PROXY="http://proxy.s3group.com/proxy.pac"
 # Split into host and port.
 export S3_PROXY_HOST=$(echo ${S3_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
 export S3_PROXY_PORT=$(echo ${S3_PROXY} | awk -F: '{print $3}' | sed 's:/::')
-export S3_NO_PROXY="localhost,192.168.249.25,193.120.88.18,192.168.249.59,.s3group.com"
+export S3_NO_PROXY="localhost,192.168.249.25,193.120.88.18,192.168.249.59,.s3group.com,git-mirrors,cmf-jenkins"
