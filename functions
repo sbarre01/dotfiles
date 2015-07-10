@@ -173,13 +173,9 @@ function gnomeproxy {
 
 # Turn on proxy.
 function proxyon {
-    #export http_proxy="http://193.120.90.34:3128/"
-    #export http_proxy="http://avproxyvlan.dublin.s3group.com:8080/"
-    export http_proxy="http://avproxylan.dublin.s3group.com:8080/"
-    #export https_proxy="http://193.120.90.34:3128/"
-    #export https_proxy="http://avproxyvlan.dublin.s3group.com:8080/"
-    export https_proxy="http://avproxylan.dublin.s3group.com:8080/"
-    export no_proxy="localhost,192.168.249.25,193.120.88.18,192.168.249.59,.s3group.com"
+    export http_proxy="${S3_PROXY}"
+    export https_proxy="${S3_PROXY}"
+    export no_proxy="${S3_NO_PROXY}"
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
