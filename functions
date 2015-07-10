@@ -183,7 +183,7 @@ function proxyon {
     ~/dotfiles/atom/atom-set-proxy.py $https_proxy/
     # if [ ! -z "$DISPLAY" ]; then 
         # echo "Enabling Gnome proxy..."
-        gnomeproxy "auto" "http://proxy.s3group.com/proxy.pac"
+        gnomeproxy "auto" "${S3_AUTO_PROXY}"
     # fi
     # echo "Proxy enabled."
 }
