@@ -164,10 +164,10 @@ function gnomeproxy {
         gsettings set org.gnome.system.proxy.socks port "$3"
         gsettings set org.gnome.system.proxy.http enabled 'true'
         gsettings set org.gnome.system.proxy mode 'manual'
-	else
+    else
         gsettings set org.gnome.system.proxy.http enabled 'false'
         gsettings set org.gnome.system.proxy mode 'none'
-	fi
+    fi
 }
 
 
