@@ -140,18 +140,18 @@ function gnomeproxy {
     if [ -z "$DISPLAY" ]; then
         return
     fi
-	machineid=$(dbus-uuidgen --get)
+    machineid=$(dbus-uuidgen --get)
     export $(DISPLAY=':0.0' dbus-launch --autolaunch="$machineid")
-	ignorelist=`echo $no_proxy | sed 's/^\[\(.*\)\]$/\1/'`
-	quoted_ignorelist=`echo $ignorelist | sed "s/[^,]\+/'\0'/g"`
-	gnome3_ignorelist="[${quoted_ignorelist}]"
+    ignorelist=`echo $no_proxy | sed 's/^\[\(.*\)\]$/\1/'`
+    quoted_ignorelist=`echo $ignorelist | sed "s/[^,]\+/'\0'/g"`
+    gnome3_ignorelist="[${quoted_ignorelist}]"
     gsettings set org.gnome.system.proxy ignore-hosts "${gnome3_ignorelist}"
-	if [ "$1" == 'auto' ]; then
+    if [ "$1" == 'auto' ]; then
         #echo "Setting auto proxy url: $2"
         gsettings set org.gnome.system.proxy autoconfig-url "$2"
         gsettings set org.gnome.system.proxy.http enabled 'true'
         gsettings set org.gnome.system.proxy mode 'auto'
-	elif [ "$1" == 'manual' ]; then
+    elif [ "$1" == 'manual' ]; then
         #echo "Setting manual proxy: $2 $3"
         gsettings set org.gnome.system.proxy.http host "$2"
         gsettings set org.gnome.system.proxy.http port "$3"
