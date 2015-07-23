@@ -43,3 +43,6 @@
 [submodule "icdiff"]
 	path = icdiff
 	url = https://github.com/jeffkaufman/icdiff.git
+[submodule "autoenv"]
+	path = autoenv
+	url = http://github.com/kennethreitz/autoenv.git
