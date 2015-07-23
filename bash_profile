@@ -29,6 +29,9 @@ if [ -f /usr/share/autojump/autojump.sh ]; then
     source /usr/share/autojump/autojump.sh
 fi
 
+# Set up autoenv
+#source ~/.autoenv/activate.sh
+
 #if [ -z "$SSH_CLIENT" -o ! -z "$SSH_TTY" ]; then
 #    bind 'set match-hidden-files off'
 #    #bind 'set show-all-if-ambiguous on'
