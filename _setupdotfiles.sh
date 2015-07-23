@@ -1,6 +1,6 @@
 SHELLSCONFIGDIR=~/dotfiles
 DOTFILESDIR=~/dotfiles
-DOTFILES=".bash_logout .bash_profile .bashrc .colordiffrc .colorgccrc .gitconfig .gitignore .inputrc .profile .pythonrc .tmux.conf .vimrc .vim .xxdiffrc"
+DOTFILES=".autoenv .bash_logout .bash_profile .bashrc .colordiffrc .colorgccrc .gitconfig .gitignore .inputrc .profile .pythonrc .tmux.conf .vimrc .vim .xxdiffrc"
 MOVE=true
 SAVEDIR=~/.old
 
