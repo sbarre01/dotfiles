@@ -69,4 +69,7 @@ if [ $? -eq 0 ]; then
     sudo service centrifydc stop
 fi
 
+# Load mingit aliases.
+source ~/dotfiles/git/mingit/.bashrc
+
 # All done.
