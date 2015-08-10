@@ -19,7 +19,7 @@ alias to.git='cd ~/git'
 
 #################################
 # Simple Program Name Shortening
-alias g=git
+#alias g=git
 
 
 #############################
