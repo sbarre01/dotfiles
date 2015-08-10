@@ -32,7 +32,7 @@ def main():
     for cfgfile in [_APM_CFGFILE, _NPM_CFGFILE]:
         cfgfile = os.path.join(os.getenv("HOME"), cfgfile)
         if not os.path.exists(cfgfile):
-            print("Config file %s does not exist!" % cfgfile)
+            # print("Config file %s does not exist!" % cfgfile)
             return
 
         lines = newlines = []
