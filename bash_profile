@@ -63,10 +63,12 @@ if [ "$HOSTNAME" == "apollo" ]; then
 fi
 
 # Stop Centrify. It seems to cause major hangs in bash tab completion.
-ps auxww | grep /usr/sbin/adclient | grep -v grep > /dev/null
-if [ $? -eq 0 ]; then
-    echo "Stopping Centrify..."
-    sudo service centrifydc stop
+if [ "$HOSTNAME" == "apollo" ]; then
+    ps auxww | grep /usr/sbin/adclient | grep -v grep > /dev/null
+    if [ $? -eq 0 ]; then
+        echo "Stopping Centrify..."
+        sudo service centrifydc stop
+    fi
 fi
 
 # Load mingit aliases.
