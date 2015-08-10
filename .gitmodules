@@ -46,6 +46,3 @@
 [submodule "autoenv"]
 	path = autoenv
 	url = http://github.com/kennethreitz/autoenv.git
-[submodule "git/mingit"]
-	path = git/mingit
-	url = https://github.com/evansendra/mingit.git
