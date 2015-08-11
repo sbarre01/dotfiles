@@ -46,6 +46,7 @@
 	enabled = true
 [diff]
 	tool = meld
+	algorithm = patience
 [difftool]
 	prompt = false
 [merge]
