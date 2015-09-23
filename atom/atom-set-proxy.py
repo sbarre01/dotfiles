@@ -47,8 +47,8 @@ def main():
             if newline:
                 newlines.append(newline)
         if opts.proxy:
-            newlines.append("proxy = %s" % opts.proxy)
-            newlines.append("https-proxy = %s" % opts.proxy)
+            newlines.append("proxy = %s\n" % opts.proxy)
+            newlines.append("https-proxy = %s\n" % opts.proxy)
         with open(cfgfile, 'w') as f:
             f.writelines(newlines)
 
