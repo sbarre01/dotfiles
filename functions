@@ -179,8 +179,8 @@ function proxyon {
     rm -f ~/.subversion/servers ~/.subversion/config
     ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
     ln -sf ~/.subversion/config.work ~/.subversion/config
-    ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy/
-    ~/dotfiles/atom/atom-set-proxy.py $https_proxy/
+    ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy
+    ~/dotfiles/atom/atom-set-proxy.py $https_proxy
     # if [ ! -z "$DISPLAY" ]; then 
         # echo "Enabling Gnome proxy..."
         #gnomeproxy "auto" "${S3_AUTO_PROXY}"
