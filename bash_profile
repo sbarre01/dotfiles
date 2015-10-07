@@ -74,4 +74,9 @@ fi
 # Load mingit aliases.
 source ~/dotfiles/git/mingit/.bashrc
 
+# Set up virtualenvwrapper.
+if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+fi
+
 # All done.
