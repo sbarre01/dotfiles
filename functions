@@ -181,11 +181,8 @@ function proxyon {
     ln -sf ~/.subversion/config.work ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy
     ~/dotfiles/atom/atom-set-proxy.py $https_proxy
-    # if [ ! -z "$DISPLAY" ]; then 
-        # echo "Enabling Gnome proxy..."
-        #gnomeproxy "auto" "${S3_AUTO_PROXY}"
-        gnomeproxy "manual" "${S3_PROXY_HOST}" "${S3_PROXY_PORT}"
-    # fi
+    #gnomeproxy "auto" "${S3_AUTO_PROXY}"
+    gnomeproxy "manual" "${S3_PROXY_HOST}" "${S3_PROXY_PORT}"
     # echo "Proxy enabled."
 }
 
@@ -207,10 +204,7 @@ function proxyoff {
     ln -sf ~/.subversion/config.home ~/.subversion/config
     ~/dotfiles/sublime-text/sublime-set-proxy.py
     ~/dotfiles/atom/atom-set-proxy.py
-    # if [ ! -z "$DISPLAY" ]; then 
-        # echo "Disabling Gnome proxy..."
-        gnomeproxy "none"
-    # fi
+    gnomeproxy "none"
     # echo "Proxy disabled."
 }
 
