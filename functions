@@ -119,13 +119,15 @@ function tools {
 function checkproxy {
     NETDEV=`netstat -nr | grep '^0.0.0.0' | awk '{print $8}'`
     #IP_ADDR=`ip addr | grep inet | egrep '(eth|em)[0-9]' | awk '{print $2}' | awk -F/ '{print $1}'`
-    IP_ADDR=`/sbin/ifconfig $NETDEV | grep inet | grep -v inet6 | awk '{print $2}' | sed 's/addr://'`
-    SUBNET=`echo ${IP_ADDR} | awk -F. '{printf("%s.%s.%s", $1, $2, $3);}'`
-    if [ "$SUBNET" == "193.120.91" -o "$SUBNET" == "192.168.91" -o "$SUBNET" == "192.168.92" -o "$SUBNET" == "192.168.93" ]; then
-        proxyon
-    else
-        proxyoff
-    fi
+    for netdev in $NETDEV; do
+        IP_ADDR=`/sbin/ifconfig $netdev | grep inet | grep -v inet6 | awk '{print $2}' | sed 's/addr://'`
+        SUBNET=`echo ${IP_ADDR} | awk -F. '{printf("%s.%s.%s", $1, $2, $3);}'`
+        if [ "$SUBNET" == "193.120.91" -o "$SUBNET" == "192.168.91" -o "$SUBNET" == "192.168.92" -o "$SUBNET" == "192.168.93" ]; then
+            proxyon
+        else
+            proxyoff
+        fi
+    done
 }
 
 
