@@ -85,4 +85,10 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
 
+# Set up Bash completion.
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+    source ~/dotfiles/go-bash-completion/go-bash-completion.bash
+fi
+
 # All done.
