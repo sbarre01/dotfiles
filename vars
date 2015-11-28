@@ -88,7 +88,7 @@ export S3_AUTO_PROXY="http://proxy.s3group.com/proxy.pac"
 # Split into host and port.
 export S3_PROXY_HOST=$(echo ${S3_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
 export S3_PROXY_PORT=$(echo ${S3_PROXY} | awk -F: '{print $3}' | sed 's:/::')
-export S3_NO_PROXY="localhost,127.0.0.0/8,.local,.s3group.com,192.168.249.0/24,192.168.248.0/24,193.120.88.0/24,192.168.249.25,git-mirrors,cmf-jenkins,jenkins-rdkcmf,rdkcmf-gerritmaster,protex"
+export S3_NO_PROXY="localhost,127.0.0.0/8,10.0.0.0/24,.local,.s3group.com,192.168.249.0/24,192.168.248.0/24,193.120.88.0/24,192.168.249.25,git-mirrors,cmf-jenkins,jenkins-rdkcmf,rdkcmf-gerritmaster,protex"
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
