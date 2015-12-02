@@ -179,8 +179,12 @@ function proxyon {
     export https_proxy="${S3_PROXY}"
     export no_proxy="${S3_NO_PROXY}"
     rm -f ~/.subversion/servers ~/.subversion/config
-    ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
-    ln -sf ~/.subversion/config.work ~/.subversion/config
+    if [ -f ~/.subversion/servers.proxy ]; then
+        ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
+    fi
+    if [ -f ~/.subversion/config.work ]; then
+        ln -sf ~/.subversion/config.work ~/.subversion/config
+    fi
     ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy
     ~/dotfiles/atom/atom-set-proxy.py $https_proxy
     #gnomeproxy "auto" "${S3_AUTO_PROXY}"
@@ -202,8 +206,12 @@ function proxyoff {
     unset FTP_PROXY
     unset ALL_PROXY
     rm -f ~/.subversion/servers ~/.subversion/config
-    ln -sf ~/.subversion/servers.noproxy ~/.subversion/servers
-    ln -sf ~/.subversion/config.home ~/.subversion/config
+    if [ -f ~/.subversion/servers.noproxy ]; then
+        ln -sf ~/.subversion/servers.noproxy ~/.subversion/servers
+    fi
+    if [ -f ~/.subversion/config.home ]; then
+        ln -sf ~/.subversion/config.home ~/.subversion/config
+    fi
     ~/dotfiles/sublime-text/sublime-set-proxy.py
     ~/dotfiles/atom/atom-set-proxy.py
     #gnomeproxy "none"
