@@ -1,0 +1,15 @@
+[identity:work]
+  name = Jim Lawton
+  email = jim.lawton@s3group.com
+
+[identity:personal]
+  name = Jim Lawton
+  email = jim.lawton@gmail.com
+
+[work]
+  ~/git/cmf/*
+  ~/Work/*
+
+[personal]
+  ~/git/*
+
