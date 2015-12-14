@@ -52,3 +52,6 @@
 [submodule "go-bash-completion"]
 	path = go-bash-completion
 	url = https://github.com/jimlawton/go-bash-completion.git
+[submodule "git/git-identify"]
+	path = git/git-identify
+	url = https://github.com/ConnorAtherton/git-identify.git
