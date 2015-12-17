@@ -55,3 +55,6 @@
 [submodule "git/git-identify"]
 	path = git/git-identify
 	url = https://github.com/ConnorAtherton/git-identify.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
