@@ -32,6 +32,9 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" use `:W` to sudo save a file if you forget to `sudo vim` the file
+command W w !sudo tee % > /dev/null
+
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
