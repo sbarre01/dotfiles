@@ -5,6 +5,8 @@ execute pathogen#infect()
 
 set shell=/bin/bash 
 
+set term=screen
+
 " turn syntax highlighting on by default
 syntax on
 filetype plugin indent on
