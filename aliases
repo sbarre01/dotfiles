@@ -33,10 +33,6 @@ alias gpl='git pull'
 alias gps='git push'
 alias gsy='git pull && git push'
 
-# Git Scribe Commands
-alias gitscribe.gp='git scribe gen pdf && open output/book.pdf'
-alias gitscribe.gh='git scribe gen html && open output/book.html'
-
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
 alias network.connections='lsof -l -i +L -R -V'
