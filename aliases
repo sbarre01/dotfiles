@@ -28,6 +28,11 @@ alias zipall='for D in *; do zip -r "$D" "$D"; done'
 
 alias hexdumpfile='od -h'
 
+alias gs='git status'
+alias gpl='git pull'
+alias gps='git push'
+alias gsy='git pull && git push'
+
 # Git Scribe Commands
 alias gitscribe.gp='git scribe gen pdf && open output/book.pdf'
 alias gitscribe.gh='git scribe gen html && open output/book.html'
