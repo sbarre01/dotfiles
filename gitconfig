@@ -122,6 +122,7 @@
 	ignored = ls-files --others --i --exclude-standard
 	k = !exec gitk --all&
 	last = log -1 HEAD
+	latest-branches = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 	lf = log --pretty=fuller
 	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 	lgorigin = log --oneline --graph --decorate origin/master...master --left-right
