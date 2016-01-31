@@ -249,6 +249,7 @@ function find.name() {
 # From Eli Bendersky
 # http://eli.thegreenplace.net/2013/06/11/keeping-persistent-history-in-bash/
 function log_bash_persistent_history() {
+    local rc=$?
     [[ $(history 1) =~ ^\ *[0-9]+\ +([^\ ]+\ [^\ ]+)\ +(.*)$ ]]
     local date_part="${BASH_REMATCH[1]}"
     local command_part="${BASH_REMATCH[2]}"
