@@ -32,6 +32,7 @@ alias gs='git status'
 alias gpl='git pull'
 alias gps='git push'
 alias gsy='git pull && git push'
+alias rsy='repo sync'
 
 # Show network connections
 # Often useful to prefix with SUDO to see more system level network usage
