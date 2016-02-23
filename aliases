@@ -91,7 +91,7 @@ alias mv='mv -i'
 #alias cd='pushd !*'
 #alias more=less
 
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias ls-l='ls -l'
 alias ls-lt='ls -lt'
 alias latest='ls -alt | head -20'
