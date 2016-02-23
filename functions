@@ -306,3 +306,13 @@ function ccp() {
     git $1 ${baseurl}/$2 $3 $4 $5 $6 $7 $8 $9
 }
 
+# Linux?
+function isLinux() {
+    return [ "$OS" = "Linux" ]
+}
+
+# Mac?
+function isMac() {
+    return [ "$OS" = "Darwin" ]
+}
+
