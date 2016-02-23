@@ -8,6 +8,7 @@ export MYDOCUMENTS=~/Documents
 export MYECLIPSE=~/workspace
 export MYLOCAL=/local/${USER}/
 
+export OS=$(uname -s)
 
 #########################################################################
 # Tool settings
