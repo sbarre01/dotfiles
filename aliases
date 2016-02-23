@@ -62,7 +62,10 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 alias ls='ls -G -h -p '
 alias ll='ls -l -G -h -p '
 
-#alias ls='ls --color=auto'
+if [ isLinux -eq 0 ]; then
+    alias ls='ls --color=auto'
+fi
+
 alias ls-l='ls -l'
 alias ls-lt='ls -lt'
 alias latest='ls -alt | head -20'
