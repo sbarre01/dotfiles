@@ -62,6 +62,10 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 alias ls='ls -G -h -p '
 alias ll='ls -l -G -h -p '
 
+#alias ls='ls --color=auto'
+alias ls-l='ls -l'
+alias ls-lt='ls -lt'
+alias latest='ls -alt | head -20'
 
 alias lessc='less -R' # Lets color escape sequences carry through to less
 alias morec='more -R'
@@ -90,11 +94,6 @@ alias mv='mv -i'
 #alias cd='cd \!*; pwd'
 #alias cd='pushd !*'
 #alias more=less
-
-#alias ls='ls --color=auto'
-alias ls-l='ls -l'
-alias ls-lt='ls -lt'
-alias latest='ls -alt | head -20'
 
 #alias du='du --exclude=.svn'
 
