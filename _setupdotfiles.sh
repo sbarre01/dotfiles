@@ -52,6 +52,10 @@ for dotfile in $DOTFILES; do
 	symlinkifne $dotfile
 done
 
+if [ ! -e ~/bin ]; then
+    ln -s ~/Dropbox/unixhome/bin ~
+fi
+
 popd
 
 echo "Done!"
