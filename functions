@@ -307,12 +307,18 @@ function ccp() {
 }
 
 # Linux?
-function isLinux() {
-    return [ "$OS" = "Linux" ]
+function isLinux {
+    if [ "$OS" = "Linux" ]; then
+        return 0
+    fi
+    return 1
 }
 
 # Mac?
-function isMac() {
-    return [ "$OS" = "Darwin" ]
+function isMac {
+    if [ "$OS" = "Darwin" ]; then
+        return 0
+    fi
+    return 1
 }
 
