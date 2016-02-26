@@ -28,6 +28,9 @@ source ~/dotfiles/bash_prompt_current
 if [ -f /usr/share/autojump/autojump.sh ]; then
     source /usr/share/autojump/autojump.sh
 fi
+if isMac; then
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
 
 # Set up autoenv
 #source ~/.autoenv/activate.sh
