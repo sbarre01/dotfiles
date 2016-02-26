@@ -92,3 +92,5 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # All done.
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
