@@ -92,6 +92,10 @@ fi
 if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
     source ~/dotfiles/go-bash-completion/go-bash-completion.bash
+elif [ -f /usr/local/etc/bash_completion ]; then
+    source /usr/local/etc/bash_completion
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+    source ~/dotfiles/go-bash-completion/go-bash-completion.bash
 fi
 
 # All done.
