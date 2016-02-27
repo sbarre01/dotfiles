@@ -93,3 +93,12 @@ export S3_NO_PROXY="localhost,127.0.0.0/8,10.0.0.0/8,.local,.s3group.com,192.168
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
+# All new environments isolated from the site-packages directory.
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+# Use the same directory for virtualenvs as virtualenvwrapper.
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+# Make pip detect an active virtualenv and install to it
+export PIP_RESPECT_VIRTUALENV=true
+# Make pip only install into a virtualenv.
+export PIP_REQUIRE_VIRTUALENV=true
+
