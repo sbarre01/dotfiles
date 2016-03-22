@@ -51,7 +51,7 @@ export TMOUT=0
 
 # Go.
 export GOPATH=~/go
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/opt/go
 
 # Manpages colour schemes.
 # Mostly magenta...
