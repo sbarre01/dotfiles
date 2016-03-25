@@ -10,7 +10,12 @@ export GIT_PS1_SHOWSTASHSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS="true"
-export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]\u@\h\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
+
+if isMac; then
+    export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]jim@mac\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
+else
+    export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]\u@\h\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
+fi
 
 export PS4='(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]}\n'
 
