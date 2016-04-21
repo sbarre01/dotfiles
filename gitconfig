@@ -43,15 +43,16 @@
 [rerere]
 	enabled = true
 [diff]
-	tool = meld
+	tool = bc3
 	algorithm = patience
 [difftool]
 	prompt = false
 [merge]
-	tool = meld
+	tool = bc3
 [mergetool]
 	prompt = false
 	keepBackup = false
+	bc3 = trustExitCode
 [url "git://github.com/"]
 	insteadOf = "ghg://"
 	pushInsteadOf = "ghg://"
