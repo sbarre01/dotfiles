@@ -324,6 +324,9 @@ function isMac {
 
 # iTerm2 tab titles
 function title {
+    if [ ! -e "${HOME}/.iterm2_shell_integration.bash" ]; then
+        return
+    fi
     if [ "$1" ]; then
         export PROMPT_COMMAND='iterm2_preexec_invoke_cmd'
         echo -ne "\033]0;${*}\007"
