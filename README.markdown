@@ -1,5 +1,5 @@
 # What is this?
-These are Jim Lawton's shell configuration dotfiles. The primary goal is to increase CLI productivity on Linux (mainly Ubuntu), though many scripts run just fine on any POSIX implementation.
+These are Jim's shell configuration dotfiles. The goal is to increase CLI productivity on Linux (mainly Ubuntu) and OSX, though many scripts run just fine on any POSIX implementation.
 
 # Focus
 The focus is on Bash support.
@@ -17,8 +17,7 @@ This project contains submodules. It is suggested that you clone this into your 
 There is a set up script that establishes the symlinks in your home directory. Run this once.
 * `_setupdotfiles.sh`
 
-> NOTE: Some personal configuration of Jim's will remain after setup. These dotfiles are intended for your inspiration, forking, and for you to tweak to your specific needs.
+> NOTE: Some personal configuration of Jim's will remain after setup. You should fork and tweak to your specific needs.
 
 # Contributions
 Contributions are always welcome in the form of pull requests with explanatory comments.
-
