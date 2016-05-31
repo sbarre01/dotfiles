@@ -328,11 +328,13 @@ function title {
         return
     fi
     if [ "$1" ]; then
-        #export PROMPT_COMMAND='iterm2_preexec_invoke_cmd'
+        # Manually specify the title.
         echo -ne "\033]0;${*}\007"
     else
-        #export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007";iterm2_preexec_invoke_cmd'
-        echo -ne "\033]0;${PWD/#$HOME/~}\007"
+        # This shows the path from ~ in the title.
+        #echo -ne "\033]0;${PWD/#$HOME/~}\007"
+        # This shows the last part of the path in the title.
+        echo -ne "\033]0;${PWD##*/}\007"
     fi
 }
 
