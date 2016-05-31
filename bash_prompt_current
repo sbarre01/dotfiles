@@ -12,7 +12,11 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS="true"
 
 if isMac; then
-    export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]jim@mac\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
+    if [ -e "${HOME}/.iterm2_shell_integration.bash" ]; then
+        export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]jim@mac\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"; iterm2_preexec_invoke_cmd'
+    else
+        export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]jim@mac\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
+    fi
 else
     export PROMPT_COMMAND='log_bash_persistent_history; __git_ps1 "\[$IBlue\]\u@\h\[$White\]:\[$IYellow\]\w" "\[$IBlue\]> \[$White\]"'
 fi
