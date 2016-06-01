@@ -136,7 +136,7 @@
 	logcpy = log --stat -1 -C -C
 	logfive = log --graph --pretty=oneline --abbrev-commit --decorate --all -5
 	logit = log --stat -M
-	logme = log --author=Matthew --stat -C
+	logme = log --author=Jim --stat -C
 	logm = log --stat -M
 	logn = log --oneline --name-only
 	logr2 = log --stat -M -2
