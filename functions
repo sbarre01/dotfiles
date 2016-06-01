@@ -264,16 +264,15 @@ function log_bash_persistent_history() {
     [[ $(history 1) =~ ^\ *[0-9]+\ +([^\ ]+\ [^\ ]+)\ +(.*)$ ]]
     local date_part="${BASH_REMATCH[1]}"
     local command_part="${BASH_REMATCH[2]}"
-    # Try to replace usernames/passwords.
+    # Try to skip usernames/passwords.
     if contains "$command_part" "$USER"; then
         return
     fi
-    if contains "$command_part" "jiml"; then
-        return
-    fi
-    if contains "$command_part" "jlawton"; then
-        return
-    fi
+    for username in $_USERNAMES; do
+        if contains "$command_part" "$username"; then
+            return
+        fi
+    done
     if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]; then
         echo "$HOSTNAME | $date_part | $command_part" >> ~/.persistent_history
         export PERSISTENT_HISTORY_LAST="$command_part"
