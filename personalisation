@@ -5,4 +5,5 @@
 export _USERNAMES="jiml jlawton jim.lawton"
 export _NAME="Jim Lawton"
 export _EMAIL="jim.lawton@accenture.com"
-
+export _SHORTUSER="jim"
+export _MACHNAME="mac"
