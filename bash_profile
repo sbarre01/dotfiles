@@ -26,6 +26,12 @@ source ~/dotfiles/bash_options
 # Load my Git bash prompt
 source ~/dotfiles/bash_prompt_current
 
+# Load Brew's git bash completion
+# source /opt/boxen/homebrew/Cellar/git/1.9.1/etc/bash_completion.d/git-completion.bash
+# source /opt/boxen/homebrew/Cellar/git/1.9.1/etc/bash_completion.d/git-prompt.sh
+# PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+# GIT_PS1_SHOWDIRTYSTATE=true
+
 # Set up Autojump.
 if [ -f /usr/share/autojump/autojump.sh ]; then
     source /usr/share/autojump/autojump.sh

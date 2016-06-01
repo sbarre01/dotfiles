@@ -7,6 +7,13 @@ set shell=/bin/bash
 
 set term=screen
 
+" set our tabs to four spaces
+set ts=4
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " turn syntax highlighting on by default
 syntax on
 filetype plugin indent on
@@ -225,4 +232,3 @@ augroup END
 autocmd FileType python set complete+=k/usr/local/pydiction isk+=.,(
 
 endif " has ("autocmd")
-
