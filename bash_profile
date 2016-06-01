@@ -4,6 +4,8 @@
 # Bash Interactive Shell Setup
 ########################################################################
 
+# Load user-specific personalisation.
+source ~/dotfiles/personalisation
 
 # Load paths and environment variables
 source ~/dotfiles/vars
