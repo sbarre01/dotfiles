@@ -1,10 +1,10 @@
 [identity:work]
-  name = Jim Lawton
-  email = jim.lawton@accenture.com
+  name = Stephen Barrett
+  email = stephen.barrett@accenture.com
 
 [identity:personal]
-  name = Jim Lawton
-  email = jim.lawton@gmail.com
+  name = Stephen Barrett
+  email = sbarre01@gmail.com
 
 [work]
   ~/git/cmf/*

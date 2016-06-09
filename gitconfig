@@ -1,6 +1,6 @@
 [user]
-	name = Jim Lawton
-	email = jim.lawton@accenture.com
+	name = Stephen Barrett
+	email = stephen.barrett@accenture.com
 [push]
 	default = simple
 [branch]
@@ -106,7 +106,7 @@
 	logcpy = log --stat -1 -C -C
 	logfive = log --graph --pretty=oneline --abbrev-commit --decorate --all -5
 	logit = log --stat -M
-	logme = log --author=Jim --stat -C
+	logme = log --author=Stephen --stat -C
 	logm = log --stat -M
 	logn = log --oneline --name-only
 	logr2 = log --stat -M -2
@@ -152,7 +152,7 @@
 	sno = show --name-only
 	squash = "!sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
 	s = status -u -s
-	standup = log --all --since yesterday --author jim.lawton@s3group.com
+	standup = log --all --since yesterday --author stephen.barrett@accenture.com
 	stat = status
 	st = status
 	sync = !git pull && git push
@@ -197,20 +197,20 @@
 	insteadOf = "ghg://"
 	pushInsteadOf = "ghg://"
 	# Example: git clone ghg://ntschutta/emacs
-[url "git://github.com/jimlawton/"]
+[url "git://github.com/sbarre01/"]
 	insteadOf = "ghgj://"
 	pushInsteadOf = "ghgj://"
 	# Example: git clone ghgj://hellogitworld
 [url "git@github.com:"]
 	insteadOf = "ghs://"
 	pushInsteadOf = "ghs://"
-[url "git@github.com:jimlawton/"]
+[url "git@github.com:sbarre01/"]
 	insteadOf = "ghsj://"
 	pushInsteadOf = "ghsj://"
 [url "https://github.com/"]
 	insteadOf = "ghh://"
 	pushInsteadOf = "ghh://"
-[url "https://github.com/jimlawton/"]
+[url "https://github.com/sbarre01/"]
 	insteadOf = "ghhj://"
 	pushInsteadOf = "ghhj://"
 
@@ -246,13 +246,13 @@
 [gh]
 protocol = https
 #[github]
-#	user = jimlawton
+#	user = sbarre01
 #[credential]
 #	helper = osxkeychain
 
 [github]
 [github]
-	user = jimlawton
+	user = sbarre01
 	#token = PLACEHOLDER
 
 [http]
